@@ -3,14 +3,14 @@ import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.riverpod.
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeFragment extends ConsumerStatefulWidget {
-  const HomeFragment({super.key});
+class LocalLifeFragment extends ConsumerStatefulWidget {
+  const LocalLifeFragment({super.key});
 
   @override
-  ConsumerState<HomeFragment> createState() => _HomeFragmentState();
+  ConsumerState<LocalLifeFragment> createState() => _HomeFragmentState();
 }
 
-class _HomeFragmentState extends ConsumerState<HomeFragment> {
+class _HomeFragmentState extends ConsumerState<LocalLifeFragment> {
   final scrollController = ScrollController();
 
   @override
@@ -37,10 +37,10 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
     return ListView(
       controller: scrollController,
       children: [
-        Container(height: 500, color: Colors.red,),
-        Container(height: 500, color: Colors.blue,),
-        Container(height: 500, color: Colors.green,),
+        Container(height: 500, color: Colors.pink,),
         Container(height: 500, color: Colors.grey,),
+        Container(height: 500, color: Colors.brown,),
+        Container(height: 500, color: Colors.yellow,),
       ],
     );
   }
