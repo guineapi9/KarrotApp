@@ -10,6 +10,7 @@ class FloatingDaangnButton extends ConsumerWidget {
   FloatingDaangnButton({super.key});
 
   final duration = 300.ms;
+  static const height = 100.0;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -62,7 +63,7 @@ class FloatingDaangnButton extends ConsumerWidget {
               Tap(
                 onTap: (){
                   //버튼을 클릭하면 값을 반대로 바꾸기
-                  ref.read(floatingButtonStateProvider.notifier).onTapButton();
+                  ref.read(floatingButtonStateProvider.notifier).toggleMenu();
                 },
                 child: AnimatedContainer(
                   duration: duration,
@@ -91,12 +92,12 @@ class FloatingDaangnButton extends ConsumerWidget {
                       )
                     ],
                   ),
-                ).pOnly(
-                    bottom: MainScreenState.bottomNavigationBarHeight +
-                        context.viewPaddingBottom +
-                        10,
-                    right: 20),
-              ),
+                ),
+              ).pOnly(
+                  bottom: MainScreenState.bottomNavigationBarHeight +
+                      context.viewPaddingBottom +
+                      10,
+                  right: 20),
             ],
           ),
         )
