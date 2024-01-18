@@ -13,9 +13,12 @@ class ProductPostItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tap(
-      onTap: (){
+      onTap: () {
         //상세페이지로 접근(id를 넘김)
-        Nav.push(PostDetailScreen(post.id, simpleProductPost: post,));
+        Nav.push(PostDetailScreen(
+          post.id,
+          simpleProductPost: post,
+        ));
       },
       child: Stack(
         children: [

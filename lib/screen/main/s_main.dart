@@ -99,7 +99,8 @@ class MainScreenState extends ConsumerState<MainScreen>
 
   Widget _buildBottomNavigationBar(BuildContext context) {
     return Container(
-      height: bottomNavigationBarHeight,
+      //ViewPaddingBottom 필요
+      height: bottomNavigationBarHeight+context.viewPaddingBottom,
       decoration: const BoxDecoration(
         boxShadow: [
           BoxShadow(color: Colors.black26, spreadRadius: 0, blurRadius: 10),
