@@ -63,22 +63,22 @@ class _$FloatingButtonStateCopyWithImpl<$Res, $Val extends FloatingButtonState>
 }
 
 /// @nodoc
-abstract class _$$_FloatingButtonStateCopyWith<$Res>
+abstract class _$$FloatingButtonStateImplCopyWith<$Res>
     implements $FloatingButtonStateCopyWith<$Res> {
-  factory _$$_FloatingButtonStateCopyWith(_$_FloatingButtonState value,
-          $Res Function(_$_FloatingButtonState) then) =
-      __$$_FloatingButtonStateCopyWithImpl<$Res>;
+  factory _$$FloatingButtonStateImplCopyWith(_$FloatingButtonStateImpl value,
+          $Res Function(_$FloatingButtonStateImpl) then) =
+      __$$FloatingButtonStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool isExpanded, bool isSmall});
 }
 
 /// @nodoc
-class __$$_FloatingButtonStateCopyWithImpl<$Res>
-    extends _$FloatingButtonStateCopyWithImpl<$Res, _$_FloatingButtonState>
-    implements _$$_FloatingButtonStateCopyWith<$Res> {
-  __$$_FloatingButtonStateCopyWithImpl(_$_FloatingButtonState _value,
-      $Res Function(_$_FloatingButtonState) _then)
+class __$$FloatingButtonStateImplCopyWithImpl<$Res>
+    extends _$FloatingButtonStateCopyWithImpl<$Res, _$FloatingButtonStateImpl>
+    implements _$$FloatingButtonStateImplCopyWith<$Res> {
+  __$$FloatingButtonStateImplCopyWithImpl(_$FloatingButtonStateImpl _value,
+      $Res Function(_$FloatingButtonStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_FloatingButtonStateCopyWithImpl<$Res>
     Object? isExpanded = null,
     Object? isSmall = null,
   }) {
-    return _then(_$_FloatingButtonState(
+    return _then(_$FloatingButtonStateImpl(
       null == isExpanded
           ? _value.isExpanded
           : isExpanded // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_FloatingButtonStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FloatingButtonState implements _FloatingButtonState {
-  _$_FloatingButtonState(this.isExpanded, this.isSmall);
+class _$FloatingButtonStateImpl implements _FloatingButtonState {
+  _$FloatingButtonStateImpl(this.isExpanded, this.isSmall);
 
   @override
   final bool isExpanded;
@@ -116,10 +116,10 @@ class _$_FloatingButtonState implements _FloatingButtonState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FloatingButtonState &&
+            other is _$FloatingButtonStateImpl &&
             (identical(other.isExpanded, isExpanded) ||
                 other.isExpanded == isExpanded) &&
             (identical(other.isSmall, isSmall) || other.isSmall == isSmall));
@@ -131,14 +131,14 @@ class _$_FloatingButtonState implements _FloatingButtonState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FloatingButtonStateCopyWith<_$_FloatingButtonState> get copyWith =>
-      __$$_FloatingButtonStateCopyWithImpl<_$_FloatingButtonState>(
+  _$$FloatingButtonStateImplCopyWith<_$FloatingButtonStateImpl> get copyWith =>
+      __$$FloatingButtonStateImplCopyWithImpl<_$FloatingButtonStateImpl>(
           this, _$identity);
 }
 
 abstract class _FloatingButtonState implements FloatingButtonState {
   factory _FloatingButtonState(final bool isExpanded, final bool isSmall) =
-      _$_FloatingButtonState;
+      _$FloatingButtonStateImpl;
 
   @override
   bool get isExpanded;
@@ -146,6 +146,6 @@ abstract class _FloatingButtonState implements FloatingButtonState {
   bool get isSmall;
   @override
   @JsonKey(ignore: true)
-  _$$_FloatingButtonStateCopyWith<_$_FloatingButtonState> get copyWith =>
+  _$$FloatingButtonStateImplCopyWith<_$FloatingButtonStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

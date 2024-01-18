@@ -61,20 +61,21 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
 }
 
 /// @nodoc
-abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
-  factory _$$_AddressCopyWith(
-          _$_Address value, $Res Function(_$_Address) then) =
-      __$$_AddressCopyWithImpl<$Res>;
+abstract class _$$AddressImplCopyWith<$Res> implements $AddressCopyWith<$Res> {
+  factory _$$AddressImplCopyWith(
+          _$AddressImpl value, $Res Function(_$AddressImpl) then) =
+      __$$AddressImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String fullAddress, String simpleAddress});
 }
 
 /// @nodoc
-class __$$_AddressCopyWithImpl<$Res>
-    extends _$AddressCopyWithImpl<$Res, _$_Address>
-    implements _$$_AddressCopyWith<$Res> {
-  __$$_AddressCopyWithImpl(_$_Address _value, $Res Function(_$_Address) _then)
+class __$$AddressImplCopyWithImpl<$Res>
+    extends _$AddressCopyWithImpl<$Res, _$AddressImpl>
+    implements _$$AddressImplCopyWith<$Res> {
+  __$$AddressImplCopyWithImpl(
+      _$AddressImpl _value, $Res Function(_$AddressImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -83,7 +84,7 @@ class __$$_AddressCopyWithImpl<$Res>
     Object? fullAddress = null,
     Object? simpleAddress = null,
   }) {
-    return _then(_$_Address(
+    return _then(_$AddressImpl(
       null == fullAddress
           ? _value.fullAddress
           : fullAddress // ignore: cast_nullable_to_non_nullable
@@ -98,8 +99,8 @@ class __$$_AddressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Address implements _Address {
-  const _$_Address(this.fullAddress, this.simpleAddress);
+class _$AddressImpl implements _Address {
+  const _$AddressImpl(this.fullAddress, this.simpleAddress);
 
   @override
   final String fullAddress;
@@ -112,10 +113,10 @@ class _$_Address implements _Address {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Address &&
+            other is _$AddressImpl &&
             (identical(other.fullAddress, fullAddress) ||
                 other.fullAddress == fullAddress) &&
             (identical(other.simpleAddress, simpleAddress) ||
@@ -128,13 +129,13 @@ class _$_Address implements _Address {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
-      __$$_AddressCopyWithImpl<_$_Address>(this, _$identity);
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
+      __$$AddressImplCopyWithImpl<_$AddressImpl>(this, _$identity);
 }
 
 abstract class _Address implements Address {
   const factory _Address(final String fullAddress, final String simpleAddress) =
-      _$_Address;
+      _$AddressImpl;
 
   @override
   String get fullAddress;
@@ -142,6 +143,6 @@ abstract class _Address implements Address {
   String get simpleAddress;
   @override
   @JsonKey(ignore: true)
-  _$$_AddressCopyWith<_$_Address> get copyWith =>
+  _$$AddressImplCopyWith<_$AddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

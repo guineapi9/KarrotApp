@@ -1,5 +1,5 @@
 import 'package:fast_app_base/common/common.dart';
-import 'package:fast_app_base/entity/post/vo_product_post.dart';
+import 'package:fast_app_base/entity/post/vo_simple_product_post.dart';
 import 'package:fast_app_base/entity/product/product_status.dart';
 import 'package:fast_app_base/entity/product/vo_product.dart';
 import 'package:fast_app_base/entity/user/vo_address.dart';
@@ -11,41 +11,24 @@ String picSum(int id) {
 
 final user1 = User(
   id: 1,
-  nickname: '홍길동',
+  nickname: '최민주',
   temperature: 36.5,
   profileUrl: picSum(1010),
 );
 
 final user2 = User(
   id: 2,
-  nickname: '바다',
+  nickname: '박정현',
   temperature: 36.5,
   profileUrl: picSum(900),
 );
 
 final user3 = User(
   id: 3,
-  nickname: '파토',
+  nickname: '민소진',
   temperature: 36.5,
   profileUrl: picSum(700),
 );
-/*
-final product1 = Product(
-    user1,
-    '아이폰13',
-    700000,
-    '깨끗하게 잘 쓰던 물건이에요.'
-        '잘 쓰면 좋겠습니다.'
-        '감사합니다.',
-    ProductStatus.normal,
-    [
-      picSum(100),
-      picSum(101),
-      picSum(102),
-    ]);
-
-
- */
 
 final product1 = Product(user1, '아이폰13', 700000, ProductStatus.normal,
     [picSum(100), picSum(101), picSum(103)]);
@@ -76,29 +59,29 @@ final product3 = Product(
   ],
 );
 
-final post1 = ProductPost(
+final post1 = SimpleProductPost(
   1,
   product1.user,
   product1,
   '글의 내용입니다.',
-  const Address('서울시 특별한 주소','앱동'),
+  const Address('서울시 특별한 주소','서울시 개포동'),
   3,
   2,
   DateTime.now().subtract(30.minutes),
 );
 
-final post2 = ProductPost(
+final post2 = SimpleProductPost(
   2,
   product2.user,
   product2,
   '글의 내용입니다.',
-  const Address('서울시 특별한 주소', '플러터시'),
+  const Address('서울시 특별한 주소', '서울시 망원동'),
   30,
   120,
   DateTime.now().subtract(5.minutes),
 );
 
-final post3 = ProductPost(
+final post3 = SimpleProductPost(
   3,
   product3.user,
   product3,
