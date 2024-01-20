@@ -27,12 +27,16 @@ class ProductPostItem extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: CachedNetworkImage(
-                  imageUrl: post.product.images[0],
-                  width: 150,
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                child: Hero(
+                  tag: '${post.id}_${post.product.images[0]}',
+                  child: CachedNetworkImage(
+                    imageUrl: post.product.images[0],
+                    width: 150,
+                    placeholder: (context, url) =>
+                        const CircularProgressIndicator(),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  ),
                 ),
               ),
               const Width(10),
@@ -40,7 +44,9 @@ class ProductPostItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    post.title.text.size(17).bold.make(),
+                    Hero(
+                        tag: "${post.id}_title",
+                        child: post.title.text.size(17).bold.make()),
                     Row(
                       children: [
                         post.address.simpleAddress.text

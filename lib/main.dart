@@ -9,12 +9,11 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
   await AppPreferences.init();
-  
-  setLocaleMessages('ko', KoMessages());
 
+  setLocaleMessages('ko', KoMessages());
   runApp(EasyLocalization(
-      supportedLocales: const [Locale('en'), Locale('ko')],
-      fallbackLocale: const Locale('en'),
+      supportedLocales: const [Locale('ko')],
+      fallbackLocale: const Locale('ko'),
       path: 'assets/translations',
       useOnlyLangCode: true,
       child: const App()));

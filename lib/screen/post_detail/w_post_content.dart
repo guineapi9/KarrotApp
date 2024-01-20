@@ -18,7 +18,9 @@ class PostContent extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        simpleProductPost.title.text.bold.make(),
+        Hero(
+            tag:"${simpleProductPost.id}_title",
+            child: Material(child: simpleProductPost.title.text.bold.make())),
         height20,
         timeago
             .format(simpleProductPost.createdTime,
@@ -28,9 +30,10 @@ class PostContent extends StatelessWidget {
             .color(context.appColors.lessImportant)
             .make(),
         height30,
-        if(productPost==null) const Center(child: CircularProgressIndicator(),),
-        if(productPost!=null) productPost!.content.text.make(),
+        if(productPost == null) const Center(
+          child: CircularProgressIndicator(),),
+        if(productPost != null) productPost!.content.text.make(),
       ],
-    ).pSymmetric(h:15);
+    ).pSymmetric(h: 15);
   }
 }

@@ -44,35 +44,16 @@ class FloatingDaangnButton extends ConsumerWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               //팽창 후 아이콘
-              AnimatedOpacity(
-                //팽창시에만 보이도록 설정
-                opacity: isExpanded ? 1 : 0,
-                duration: duration,
-                child: Column(
-                  children: [
-                    Container(
-                      width: 160,
-                      padding: const EdgeInsets.all(15),
-                      margin: const EdgeInsets.only(right: 15, bottom: 10),
-                      decoration: BoxDecoration(
-                          color: context.appColors.floatingActionLayer,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          _floatItem('알바', '$basePath/fab/fab_01.png'),
-                          _floatItem('과외/클라스', '$basePath/fab/fab_02.png'),
-                          _floatItem('농수산물', '$basePath/fab/fab_03.png'),
-                          _floatItem('부동산', '$basePath/fab/fab_04.png'),
-                          _floatItem('중고차', '$basePath/fab/fab_05.png'),
-                        ],
-                      ),
-                    ),
-                    Tap(
-                      onTap: (){
-                        Nav.push(WriteScreen());
-                        },
-                      child: Container(
+              //IgnorePointer 내가 추가
+              IgnorePointer(
+                ignoring: !isExpanded,
+                child: AnimatedOpacity(
+                  //팽창시에만 보이도록 설정
+                  opacity: isExpanded ? 1 : 0,
+                  duration: duration,
+                  child: Column(
+                    children: [
+                      Container(
                         width: 160,
                         padding: const EdgeInsets.all(15),
                         margin: const EdgeInsets.only(right: 15, bottom: 10),
@@ -82,14 +63,37 @@ class FloatingDaangnButton extends ConsumerWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            _floatItem('내 물건 팔기', '$basePath/fab/fab_06.png'),
+                            _floatItem('알바', '$basePath/fab/fab_01.png'),
+                            _floatItem('과외/클라스', '$basePath/fab/fab_02.png'),
+                            _floatItem('농수산물', '$basePath/fab/fab_03.png'),
+                            _floatItem('부동산', '$basePath/fab/fab_04.png'),
+                            _floatItem('중고차', '$basePath/fab/fab_05.png'),
                           ],
                         ),
                       ),
-                    ),
-                  ],
-                ),
+                      Tap(
+                        onTap: (){
+                          Nav.push(WriteScreen());
+                          },
+                        child: Container(
+                          width: 160,
+                          padding: const EdgeInsets.all(15),
+                          margin: const EdgeInsets.only(right: 15, bottom: 10),
+                          decoration: BoxDecoration(
+                              color: context.appColors.floatingActionLayer,
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              _floatItem('내 물건 팔기', '$basePath/fab/fab_06.png'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
 
+                ),
               ),
               // + 버튼
               Tap(

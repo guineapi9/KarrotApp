@@ -150,25 +150,32 @@ class _ImagePager extends StatelessWidget {
         children: [
           PageView(
             controller: pageController,
-            children: simpleProductPost.product.images.map((url) =>
-                //Boxfit.fill : 꽉 차는 이미지
-                CachedNetworkImage(imageUrl: url, fit: BoxFit.fill)).toList(),
+            children: simpleProductPost.product.images
+                .map((url) =>
+                    //Boxfit.fill : 꽉 차는 이미지
+                    Hero(
+                        tag: '${simpleProductPost.id}_$url',
+                        child: CachedNetworkImage(
+                          imageUrl: url,
+                          fit: BoxFit.fill,
+                        )))
+                .toList(),
           ),
-          if(simpleProductPost.product.images.length > 1)
+          if (simpleProductPost.product.images.length > 1)
             Align(
-            alignment: Alignment.bottomCenter,
-            child: SmoothPageIndicator(
-                controller: pageController,
-                // PageController
-                count: simpleProductPost.product.images.length,
-                effect: const JumpingDotEffect(
-                  verticalOffset: 10,
-                  dotColor: Colors.white54,
-                  activeDotColor: Colors.black45,
-                ),
-                // your preferred effect
-                onDotClicked: (index) {}),
-          )
+              alignment: Alignment.bottomCenter,
+              child: SmoothPageIndicator(
+                  controller: pageController,
+                  // PageController
+                  count: simpleProductPost.product.images.length,
+                  effect: const JumpingDotEffect(
+                    verticalOffset: 10,
+                    dotColor: Colors.white54,
+                    activeDotColor: Colors.black45,
+                  ),
+                  // your preferred effect
+                  onDotClicked: (index) {}),
+            )
         ],
       ),
     );
