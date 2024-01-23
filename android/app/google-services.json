@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "820181082511",
+    "project_id": "daangn-demo-3784c",
+    "storage_bucket": "daangn-demo-3784c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:820181082511:android:6c36365997545a53ad2bfa",
+        "android_client_info": {
+          "package_name": "com.example.fast_app_base"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKAxVhVyS7nMVJVdLTjjx9Hmu_tVlwPRs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

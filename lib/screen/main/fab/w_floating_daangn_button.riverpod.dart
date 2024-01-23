@@ -1,3 +1,4 @@
+import 'package:fast_app_base/common/cli_common.dart';
 import 'package:fast_app_base/screen/main/fab/w_floating_daangn_button.state.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -6,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final floatingButtonStateProvider = StateNotifierProvider<
     FloatingButtonStateNotifier,
     FloatingButtonState>(
-        (ref) => FloatingButtonStateNotifier(FloatingButtonState(false, false)));
+        (ref) => FloatingButtonStateNotifier(FloatingButtonState(false, false, false)));
 
 //상태 변경과 알림을 담당
 //chatGPT
@@ -27,7 +28,7 @@ class FloatingButtonStateNotifier extends StateNotifier<FloatingButtonState> {
     final isSmall = state.isSmall;
 
 
-    state = FloatingButtonState(!state.isExpanded, needToMakeButtonBigger ? false : true);
+    state = FloatingButtonState(!state.isExpanded, needToMakeButtonBigger ? false : true, false);
 
     //이 코드와 같은 의미
     // state.isExpanded = !state.isExpanded; //값을 반대로 바꿈
@@ -46,6 +47,13 @@ class FloatingButtonStateNotifier extends StateNotifier<FloatingButtonState> {
     state = state.copyWith(isSmall: isSmall);
     //아래와 위는 같다
     //state = FloatingButtonState(state.isExpanded, isSmall);
+  }
+
+  void hideButton() {
+    state = state.copyWith(isHidden: true);
+  }
+  void showButton() {
+    state = state.copyWith(isHidden: false);
   }
 }
 

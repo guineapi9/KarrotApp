@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,16 +49,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDuI4biWZPU4QPJxCyeHxbOW64wMgnjmD8',
-    appId: '1:820181082511:web:6d8751f900536ca8ad2bfa',
-    messagingSenderId: '820181082511',
-    projectId: 'daangn-demo-3784c',
-    authDomain: 'daangn-demo-3784c.firebaseapp.com',
-    storageBucket: 'daangn-demo-3784c.appspot.com',
-    measurementId: 'G-LZVE1SJEX4',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCKAxVhVyS7nMVJVdLTjjx9Hmu_tVlwPRs',
     appId: '1:820181082511:android:6c36365997545a53ad2bfa',
@@ -68,14 +64,5 @@ class DefaultFirebaseOptions {
     projectId: 'daangn-demo-3784c',
     storageBucket: 'daangn-demo-3784c.appspot.com',
     iosBundleId: 'com.example.karrotapp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCBOC_SiiTwaukS7164P9XNeBUt8gOyKog',
-    appId: '1:820181082511:ios:3bbac68fd622c2d0ad2bfa',
-    messagingSenderId: '820181082511',
-    projectId: 'daangn-demo-3784c',
-    storageBucket: 'daangn-demo-3784c.appspot.com',
-    iosBundleId: 'com.example.fastAppBase',
   );
 }

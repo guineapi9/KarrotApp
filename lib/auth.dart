@@ -7,7 +7,8 @@ import 'package:go_router/go_router.dart';
 
 /// A mock authentication service.
 class DaangnAuth extends ChangeNotifier {
-  bool _signedIn = false;
+  //true가 되면 로그인 없이 수행
+  bool _signedIn = true;
 
   /// Whether user has signed in.
   bool get signedIn => _signedIn;

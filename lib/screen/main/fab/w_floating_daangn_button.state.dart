@@ -8,6 +8,7 @@ class FloatingButtonState with _$FloatingButtonState{
   //값의 변경이 없으므로 final로 선언
   factory FloatingButtonState(
     final bool isExpanded,
-    final bool isSmall
+    final bool isSmall,
+    final bool isHidden
       ) = _FloatingButtonState;
 }

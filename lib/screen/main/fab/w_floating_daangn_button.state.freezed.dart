@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FloatingButtonState {
   bool get isExpanded => throw _privateConstructorUsedError;
   bool get isSmall => throw _privateConstructorUsedError;
+  bool get isHidden => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $FloatingButtonStateCopyWith<FloatingButtonState> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $FloatingButtonStateCopyWith<$Res> {
           FloatingButtonState value, $Res Function(FloatingButtonState) then) =
       _$FloatingButtonStateCopyWithImpl<$Res, FloatingButtonState>;
   @useResult
-  $Res call({bool isExpanded, bool isSmall});
+  $Res call({bool isExpanded, bool isSmall, bool isHidden});
 }
 
 /// @nodoc
@@ -48,6 +49,7 @@ class _$FloatingButtonStateCopyWithImpl<$Res, $Val extends FloatingButtonState>
   $Res call({
     Object? isExpanded = null,
     Object? isSmall = null,
+    Object? isHidden = null,
   }) {
     return _then(_value.copyWith(
       isExpanded: null == isExpanded
@@ -57,6 +59,10 @@ class _$FloatingButtonStateCopyWithImpl<$Res, $Val extends FloatingButtonState>
       isSmall: null == isSmall
           ? _value.isSmall
           : isSmall // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isHidden: null == isHidden
+          ? _value.isHidden
+          : isHidden // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -70,7 +76,7 @@ abstract class _$$FloatingButtonStateImplCopyWith<$Res>
       __$$FloatingButtonStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isExpanded, bool isSmall});
+  $Res call({bool isExpanded, bool isSmall, bool isHidden});
 }
 
 /// @nodoc
@@ -86,6 +92,7 @@ class __$$FloatingButtonStateImplCopyWithImpl<$Res>
   $Res call({
     Object? isExpanded = null,
     Object? isSmall = null,
+    Object? isHidden = null,
   }) {
     return _then(_$FloatingButtonStateImpl(
       null == isExpanded
@@ -96,6 +103,10 @@ class __$$FloatingButtonStateImplCopyWithImpl<$Res>
           ? _value.isSmall
           : isSmall // ignore: cast_nullable_to_non_nullable
               as bool,
+      null == isHidden
+          ? _value.isHidden
+          : isHidden // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -103,16 +114,18 @@ class __$$FloatingButtonStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FloatingButtonStateImpl implements _FloatingButtonState {
-  _$FloatingButtonStateImpl(this.isExpanded, this.isSmall);
+  _$FloatingButtonStateImpl(this.isExpanded, this.isSmall, this.isHidden);
 
   @override
   final bool isExpanded;
   @override
   final bool isSmall;
+  @override
+  final bool isHidden;
 
   @override
   String toString() {
-    return 'FloatingButtonState(isExpanded: $isExpanded, isSmall: $isSmall)';
+    return 'FloatingButtonState(isExpanded: $isExpanded, isSmall: $isSmall, isHidden: $isHidden)';
   }
 
   @override
@@ -122,11 +135,13 @@ class _$FloatingButtonStateImpl implements _FloatingButtonState {
             other is _$FloatingButtonStateImpl &&
             (identical(other.isExpanded, isExpanded) ||
                 other.isExpanded == isExpanded) &&
-            (identical(other.isSmall, isSmall) || other.isSmall == isSmall));
+            (identical(other.isSmall, isSmall) || other.isSmall == isSmall) &&
+            (identical(other.isHidden, isHidden) ||
+                other.isHidden == isHidden));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isExpanded, isSmall);
+  int get hashCode => Object.hash(runtimeType, isExpanded, isSmall, isHidden);
 
   @JsonKey(ignore: true)
   @override
@@ -137,13 +152,16 @@ class _$FloatingButtonStateImpl implements _FloatingButtonState {
 }
 
 abstract class _FloatingButtonState implements FloatingButtonState {
-  factory _FloatingButtonState(final bool isExpanded, final bool isSmall) =
+  factory _FloatingButtonState(
+          final bool isExpanded, final bool isSmall, final bool isHidden) =
       _$FloatingButtonStateImpl;
 
   @override
   bool get isExpanded;
   @override
   bool get isSmall;
+  @override
+  bool get isHidden;
   @override
   @JsonKey(ignore: true)
   _$$FloatingButtonStateImplCopyWith<_$FloatingButtonStateImpl> get copyWith =>
