@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 import 'localLife/f_local_life.dart';
 
 enum TabItem {
-  home(Icons.home, '홈', HomeFragment()),
-  localLife(Icons.star, '동네생활', LocalLifeFragment()),
-  nearMe(Icons.star, '내 근처', NearMeFragment()),
-  chat(Icons.chat, '채팅', ChatFragment()),
-  my(Icons.person, '나의 당근', MyFragment());
+  home(Icons.home, 'home', HomeFragment()),
+  localLife(Icons.star, 'local_life', LocalLifeFragment()),
+  nearMe(Icons.star, 'nearMe', NearMeFragment()),
+  chat(Icons.chat, 'chat', ChatFragment()),
+  my(Icons.person, 'my_daangn', MyFragment());
 
   final IconData activeIcon;
   final IconData inActiveIcon;
-  final String tabName;
+  final String tabNameKey;
   final Widget firstPage;
 
-  const TabItem(this.activeIcon, this.tabName, this.firstPage, {IconData? inActiveIcon})
+  const TabItem(this.activeIcon, this.tabNameKey, this.firstPage, {IconData? inActiveIcon})
       : inActiveIcon = inActiveIcon ?? activeIcon;
 
   static TabItem find(String? name){
@@ -29,11 +29,11 @@ enum TabItem {
   BottomNavigationBarItem toNavigationBarItem(BuildContext context, {required bool isActivated}) {
     return BottomNavigationBarItem(
         icon: Icon(
-          key: ValueKey(tabName),
+          key: ValueKey(tabNameKey),
           isActivated ? activeIcon : inActiveIcon,
           color:
               isActivated ? context.appColors.iconButton : context.appColors.iconButtonInactivate,
         ),
-        label: tabName);
+        label: tabNameKey.tr());
   }
 }

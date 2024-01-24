@@ -55,7 +55,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("내 물건 팔기"),
+        title: const Text("sell_my_thing").tr(),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios_rounded),
           onPressed: () {
@@ -63,7 +63,7 @@ class _WriteScreenState extends ConsumerState<WriteScreen>
           },
         ),
         actions: [
-          "임시저장".text.make().p(15),
+          "temp_save".tr().text.make().p(15),
         ],
       ),
       body: SingleChildScrollView(
@@ -354,13 +354,13 @@ class _PriceEditorState extends State<_PriceEditor> {
           keyboardType: TextInputType.number,
           focusNode: priceNode,
           enabled: !isDonateMode,
-          decoration: const InputDecoration(
-              hintText: "￦ 가격을 입력해주세요.",
-              focusedBorder: OutlineInputBorder(
+          decoration: InputDecoration(
+              hintText: "input_price".tr(namedArgs: {'test':'💰'}),
+              focusedBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
                 color: Colors.orange,
               )),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                   borderSide: BorderSide(
                 color: Colors.grey,
               ))),

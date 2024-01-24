@@ -38,8 +38,6 @@ class AppState extends ConsumerState<App> with WidgetsBindingObserver, Nav {
     super.initState();
     FcmManager.requestPermission();
     FcmManager.initialized(ref);
-    print("navigatorKey.currentContext = ");
-    print(navigatorKey.currentContext);
     WidgetsBinding.instance.addObserver(this);
   }
 

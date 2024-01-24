@@ -73,7 +73,7 @@ class _HomeFragmentState extends ConsumerState<HomeFragment> {
                   .toList(),
               child: Text(title),
             ),
-            automaticallyImplyLeading: false, //햄버거 버튼 사라지게하기
+            automaticallyImplyLeading: true, //햄버거 버튼 사라지게하기
           ),
           Expanded(
             child: ListView.separated(
